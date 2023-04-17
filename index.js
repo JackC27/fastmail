@@ -1,9 +1,10 @@
 const Imap = require('imap');
 const { simpleParser } = require('mailparser');
+require('dotenv').config();
 
 // Set your Fastmail credentials
-const FASTMAIL_USERNAME = 'your_username@fastmail.com';
-const FASTMAIL_PASSWORD = 'your_password';
+const FASTMAIL_USERNAME = `${process.env.FASTMAIL_USERNAME}`;
+const FASTMAIL_PASSWORD = `${process.env.FASTMAIL_PASSWORD}`;
 
 // Configure the IMAP connection
 const imap = new Imap({
